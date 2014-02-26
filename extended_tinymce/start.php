@@ -16,7 +16,7 @@ function extended_tinymce_init() {
 
 	elgg_extend_view('input/longtext', 'extended_tinymce/init');
 
-	elgg_extend_view('embed/custom_insert_js', 'extended_tinymce/embed_custom_insert_js');
+	elgg_extend_view('js/embed/embed', 'js/elgg/extended_tinymce/insert.js');
 
 	// extend allowed styles for tinymce editor as filtered by htmlawed
 	elgg_register_plugin_hook_handler('allowed_styles', 'htmlawed', 'extended_tinymce_allowed_styles');

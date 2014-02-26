@@ -3,7 +3,7 @@
     <name>Extended TinyMCE</name>
     <id>extended_tinymce</id>
     <author>iionly / Core developers / Moxiecode Systems AB</author>
-    <version>4.0.16 r31</version>
+    <version>4.0.17 r32</version>
     <category>non-bundled</category>
     <category>enhancement</category>
     <description>Extended TinyMCE plugin based on the core TinyMCE plugin.</description>
