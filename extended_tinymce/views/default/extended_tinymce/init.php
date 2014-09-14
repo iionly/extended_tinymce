@@ -15,16 +15,20 @@ $(document).ready(function(){
 		relative_urls : false,
 		remove_script_host : false,
 		document_base_url : elgg.config.wwwroot,
-		plugins: "advlist autolink charmap code colorpicker emoticons fullscreen hr image insertdatetime link lists paste preview print searchreplace table textcolor textpattern wordcount",
+		plugins: "advlist autolink autoresize charmap code colorpicker emoticons fullscreen hr image insertdatetime link lists paste preview print searchreplace table textcolor textpattern wordcount",
 		menubar: false,
 		toolbar_items_size: "small",
-		toolbar1: "newdocument preview fullscreen print | searchreplace | styleselect | fontselect | fontsizeselect",
-		toolbar2: "undo redo | bullist numlist | outdent indent | bold italic underline | alignleft aligncenter alignright alignjustify | removeformat",
-		toolbar3: "pastetext | insertdatetime | charmap | hr | table | forecolor backcolor | link unlink | image | emoticons | blockquote" + (elgg.is_admin_logged_in() ? " | code" : ""),
+		toolbar: [
+			"newdocument preview fullscreen print | searchreplace | styleselect | fontselect | fontsizeselect",
+			"undo redo | bullist numlist | outdent indent | bold italic underline | alignleft aligncenter alignright alignjustify | removeformat",
+			"pastetext | insertdatetime | charmap | hr | table | forecolor backcolor | link unlink | image | emoticons | blockquote" + (elgg.is_admin_logged_in() ? " | code" : "")
+		],
 		width : "99%",
 		browser_spellcheck : true,
 		image_advtab: true,
 		paste_data_images: false,
+		autoresize_min_height: 200,
+		autoresize_max_height: 450,
 		insertdate_formats: ["%I:%M:%S %p", "%H:%M:%S", "%Y-%m-%d", "%d.%m.%Y"],
 		content_css: elgg.config.wwwroot + 'mod/extended_tinymce/css/elgg_extended_tinymce.css'
 	})
