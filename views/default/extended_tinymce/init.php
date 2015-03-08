@@ -5,7 +5,7 @@
 ?>
 
 <script>
-$(document).ready(function(){
+require(['jquery', 'elgg', 'extended_tinymce'], function($) {
 	$(".elgg-input-longtext").tinymce({
 		script_url : elgg.config.wwwroot + '/mod/extended_tinymce/vendor/tinymce/js/tinymce/tinymce.min.js',
 		selector: ".elgg-input-longtext",
@@ -30,7 +30,14 @@ $(document).ready(function(){
 		autoresize_min_height: 200,
 		autoresize_max_height: 450,
 		insertdate_formats: ["%I:%M:%S %p", "%H:%M:%S", "%Y-%m-%d", "%d.%m.%Y"],
-		content_css: elgg.config.wwwroot + 'mod/extended_tinymce/css/elgg_extended_tinymce.css'
-	})
+		content_css: elgg.config.wwwroot + 'mod/extended_tinymce/css/elgg_extended_tinymce.css',
+		setup : function(e) {
+					e.on('change', function(e) {
+						if (typeof tinyMCE != "undefined") {
+							tinyMCE.triggerSave();
+						}
+					});
+				}
+	});
 });
 </script>

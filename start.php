@@ -11,8 +11,10 @@ function extended_tinymce_init() {
 	elgg_extend_view('css/elgg', 'extended_tinymce/css');
 	elgg_extend_view('css/admin', 'extended_tinymce/css');
 
-	elgg_register_js('extended_tinymce', 'mod/extended_tinymce/vendor/tinymce/js/tinymce/jquery.tinymce.min.js');
-	elgg_load_js('extended_tinymce');
+	elgg_define_js('extended_tinymce', array(
+		'src' => '/mod/extended_tinymce/vendor/tinymce/js/tinymce/jquery.tinymce.min.js',
+		'deps' => array('jquery', 'elgg'),
+	));
 
 	elgg_extend_view('input/longtext', 'extended_tinymce/init');
 
