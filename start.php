@@ -12,7 +12,7 @@ function extended_tinymce_init() {
 	elgg_extend_view('css/admin', 'extended_tinymce/css');
 
 	elgg_define_js('extended_tinymce', array(
-		'src' => '/mod/extended_tinymce/vendor/tinymce/js/tinymce/jquery.tinymce.min.js',
+		'src' => 'mod/extended_tinymce/vendor/tinymce/js/tinymce/jquery.tinymce.min.js',
 		'deps' => array('jquery', 'elgg'),
 	));
 
