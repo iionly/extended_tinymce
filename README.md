@@ -1,8 +1,8 @@
 Elgg Extended Tinymce plugin for Elgg 1.9 - 1.11
 ================================================
 
-Latest Version: 4.1.10  
-Released: 2015-05-15  
+Latest Version: 4.1.10.1  
+Released: 2015-05-16  
 Contact: iionly@gmx.de  
 License: GNU General Public License version 2  
 Copyright: (c) iionly 2012-2015, (C) Curverider 2008-2015  
