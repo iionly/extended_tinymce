@@ -2,13 +2,15 @@ define(function(require) {
 	var $ = require('jquery');
 	var elgg = require('elgg');
 	var EXTENDED_TINYMCE = require('extended_tinymce');
-	
+
+	var tinymceLanguage = $('input:hidden[name=extendedtinymcelang]').val();
+
 	$(".elgg-input-longtext").tinymce({
 		script_url : elgg.config.wwwroot + '/mod/extended_tinymce/vendor/tinymce/js/tinymce/tinymce.min.js',
 		selector: ".elgg-input-longtext",
 		theme: "modern",
 		skin : "lightgray",
-		language : elgg.get_language(),
+		language : tinymceLanguage,
 		relative_urls : false,
 		remove_script_host : false,
 		document_base_url : elgg.config.wwwroot,

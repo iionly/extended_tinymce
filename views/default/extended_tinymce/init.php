@@ -3,16 +3,21 @@
  * Initialize the TinyMCE script
  */
 
+echo elgg_view('input/hidden', array('name' => 'extendedtinymcelang', 'value' => extended_tinymce_get_user_language()));
+
 if (elgg_in_context('activity') || elgg_in_context('ajax')) {
 	$inline_code = <<<___JS
 <script>
 	require(['jquery', 'elgg', 'extended_tinymce'], function($) {
+
+		var tinymceLanguage = $('input:hidden[name=extendedtinymcelang]').val();
+
 		$(".elgg-input-longtext").tinymce({
 			script_url : elgg.config.wwwroot + '/mod/extended_tinymce/vendor/tinymce/js/tinymce/tinymce.min.js',
 			selector: ".elgg-input-longtext",
 			theme: "modern",
 			skin : "lightgray",
-			language : elgg.get_language(),
+			language : tinymceLanguage,
 			relative_urls : false,
 			remove_script_host : false,
 			document_base_url : elgg.config.wwwroot,

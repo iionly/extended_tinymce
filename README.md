@@ -1,8 +1,8 @@
-Elgg Extended Tinymce plugin for Elgg 1.9 - 1.11
-================================================
+Elgg Extended Tinymce plugin for Elgg 1.9 - 1.12 and Elgg 2.X
+=============================================================
 
-Latest Version: 4.1.10.1  
-Released: 2015-05-16  
+Latest Version: 4.2.5  
+Released: 2015-09-15  
 Contact: iionly@gmx.de  
 License: GNU General Public License version 2  
 Copyright: (c) iionly 2012-2015, (C) Curverider 2008-2015  
@@ -16,7 +16,7 @@ Website: http://www.tinymce.com/
 Description
 -----------
 
-An extended tinymce plugin based on the jquery version 4.1.10 of the TinyMCE editor. This release of the Extended Tinymce plugin is for Elgg 1.9 - 1.11 only.
+An extended tinymce plugin based on the jquery version 4.2.5 of the TinyMCE editor. This release of the Extended Tinymce plugin is for Elgg 1.9 - 1.12 and for Elgg 2.X.
 
 For backward compatibility with version 3 of the editor the folder mod/extended_tinymce/vendor/tinymce/jscripts/tiny_mce/plugins/emotions/img contains the emoticons images at the location where they were available before.
 
@@ -42,7 +42,7 @@ IMPORTANT: Tinymce uses a z-index of 100 for its fullscreen mode. This conflicts
 
 2. Copy your skin folder into the mod/extended_tinymce/vendor/tinymce/js/tinymce/skins directory,
 
-3. Change the skin name of the skin option in mod/extended_tinymce/views/default/js/elgg/extended_tinymce_init.js to the name of your skin.
+3. Change the skin name of the skin option in mod/extended_tinymce/views/default/js/elgg/extended_tinymce_init.js and mod/extended_tinymce/views/default/extended_tinymce/init.php to the name of your skin.
 
 
 Adding a language for the tinymce editor

@@ -25,7 +25,6 @@ function extended_tinymce_init() {
 }
 
 function extended_tinymce_allowed_styles($hook, $type, $items, $vars) {
-
 	$allowed_styles = array(
 		'color', 'cursor', 'text-align', 'vertical-align', 'font-size', 'font-family',
 		'font-weight', 'font-style', 'border', 'border-top', 'background-color',
@@ -38,7 +37,6 @@ function extended_tinymce_allowed_styles($hook, $type, $items, $vars) {
 }
 
 function extended_tinymce_get_site_language() {
-
 	if ($site_language = elgg_get_config('language')) {
 		$path = elgg_get_plugins_path() . "extended_tinymce/vendor/tinymce/js/tinymce/langs";
 		if (file_exists("$path/$site_language.js")) {
@@ -47,4 +45,16 @@ function extended_tinymce_get_site_language() {
 	}
 
 	return 'en';
+}
+
+function extended_tinymce_get_user_language() {
+	$user_language = get_current_language();
+
+	$path = elgg_get_plugins_path() . "extended_tinymce/vendor/tinymce/js/tinymce/langs";
+
+	if (!file_exists("$path/$user_language.js")) {
+		return extended_tinymce_get_site_language();
+	}
+
+	return $user_language;
 }
