@@ -9,6 +9,21 @@
  * weight to override the TinyMCE rules
  */
 ?>
+
+.elgg-input-longtext {
+	width: 98%;
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	display: block !important;
+	height: 0;
+	resize: none;
+	width: 0;
+	visibility: hidden;
+	position: relative;
+	top: -15px;
+}
+
 /* TinyMCE */
 .elgg-page .mceEditor table.mceLayout {
 	border: 1px solid #CCC;

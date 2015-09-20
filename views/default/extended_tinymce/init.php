@@ -36,7 +36,10 @@ if (elgg_in_context('activity') || elgg_in_context('ajax')) {
 			autoresize_min_height: 200,
 			autoresize_max_height: 450,
 			insertdate_formats: ["%I:%M:%S %p", "%H:%M:%S", "%Y-%m-%d", "%d.%m.%Y"],
-			content_css: elgg.config.wwwroot + 'mod/extended_tinymce/css/elgg_extended_tinymce.css'
+			content_css: elgg.config.wwwroot + 'mod/extended_tinymce/css/elgg_extended_tinymce.css',
+			setup : function(e) {
+				e.on('change', function(e) { tinyMCE.triggerSave(); });
+			}
 		});
 	});
 </script>
