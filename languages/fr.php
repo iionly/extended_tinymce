@@ -2,6 +2,8 @@
 /**
  * Extended TinyMCE language pack.
  *
+ * Thanks to Facyla for providing the French translation
+ *
  */
 
 return array(

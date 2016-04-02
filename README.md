@@ -1,8 +1,8 @@
 Elgg Extended Tinymce plugin for Elgg 1.9 - 1.12 and Elgg 2.X
 =============================================================
 
-Latest Version: 4.3.3  
-Released: 2016-01-16  
+Latest Version: 4.3.8  
+Released: 2016-04-02  
 Contact: iionly@gmx.de  
 License: GNU General Public License version 2  
 Copyright: (c) iionly 2012-2016, (C) Curverider 2008-2016  
@@ -16,7 +16,7 @@ Website: http://www.tinymce.com/
 Description
 -----------
 
-An extended tinymce plugin based on the jquery version 4.3.3 of the TinyMCE editor. This release of the Extended Tinymce plugin is for Elgg 1.9 - 1.12 and for Elgg 2.X.
+An extended tinymce plugin based on the jquery version 4.3.8 of the TinyMCE editor. This release of the Extended Tinymce plugin is for Elgg 1.9 - 1.12 and for Elgg 2.X.
 
 For backward compatibility with version 3 of the editor the folder mod/extended_tinymce/vendor/tinymce/jscripts/tiny_mce/plugins/emotions/img contains the emoticons images at the location where they were available before.
 
@@ -47,7 +47,7 @@ This is not to be mixed up with adding an Elgg language file for the plugin. It'
 
 IMPORTANT: starting with version 4.1.10 of the Extended Tinymce plugin the user's language is used automatically. Unfortunately, it's not possible to check the existence of the corresponding editor's language file sufficiently. The translation files for Tinymce corresponding to the languages available in Elgg core are included in the release of this plugin. But if you support additional translations on your site you need to add the corresponding language file of Tinymce or the editor will not work. If you would like one of the available translations to be added, please tell me and I will do so for the next release of Extended Tinymce.
 
-1. Download the language pack from http://www.tinymce.com/i18n/index.php,
+1. Download the language pack from https://www.tinymce.com/download/language-packages/,
 2. Extract the language files from the zip file,
 3. Copy the language files into the mod/extended_tinymce/vendor/tinymce/js/tinymce/langs/ directory,
 4. Flush the Elgg caches via the admin dashboard on your site.
