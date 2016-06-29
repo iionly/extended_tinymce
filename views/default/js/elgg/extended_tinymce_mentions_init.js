@@ -2,6 +2,7 @@ define(function(require) {
 	var $ = require('jquery');
 	var elgg = require('elgg');
 	var EXTENDED_TINYMCE = require('extended_tinymce');
+	var mentions = require('mentions/autocomplete');
 
 	var tinymceLanguage = $('input:hidden[name=extendedtinymcelang]').val();
 
@@ -31,6 +32,17 @@ define(function(require) {
 		content_css: elgg.config.wwwroot + 'mod/extended_tinymce/css/elgg_extended_tinymce.css',
 		setup : function(e) {
 			e.on('change', function(e) { tinymce.triggerSave(); });
+			e.on('keyup', function(e) {
+				e = e || window.event;
+				var keycode = ('which' in e) ? e.which : e.keyCode;
+				if (mentions.isValidKey(keycode)) {
+					content = tinymce.activeEditor.getContent({format : 'text'});
+					position = tinymce.activeEditor.selection.getRng(1).startOffset;
+					mentions.autocomplete(content, position, function(content) {
+						tinymce.activeEditor.setContent(content);
+					});
+				}
+			});
 		}
 	});
 });

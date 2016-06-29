@@ -27,7 +27,7 @@ function extended_tinymce_init() {
 function extended_tinymce_allowed_styles($hook, $type, $items, $vars) {
 	$allowed_styles = array(
 		'color', 'cursor', 'text-align', 'vertical-align', 'font-size', 'font-family',
-		'font-weight', 'font-style', 'border', 'border-top', 'background-color',
+		'font-weight', 'font-style', 'border', 'border-top', 'border-color', 'background-color',
 		'border-bottom', 'border-left', 'border-right',
 		'margin', 'margin-top', 'margin-bottom', 'margin-left',
 		'margin-right', 'padding', 'float', 'text-decoration'

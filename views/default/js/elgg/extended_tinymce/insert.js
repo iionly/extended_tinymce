@@ -5,8 +5,8 @@
  */
 
 elgg.register_hook_handler('embed', 'editor', function(hook, type, params, value) {
-	if (window.tinyMCE) {
-		var editor = window.tinyMCE.get(params.textAreaId);
+	if (window.tinymce) {
+		var editor = window.tinymce.get(params.textAreaId);
 		if (editor) {
 			var content = params.content;
 			try {
