@@ -11,9 +11,8 @@
 ?>
 
 .elgg-input-longtext {
-	width: 98%;
+	width: 100%;
 	background: transparent;
-	border: none;
 	box-shadow: none;
 	display: block !important;
 	height: 0;
@@ -21,7 +20,7 @@
 	width: 0;
 	visibility: hidden;
 	position: relative;
-	top: -15px;
+	padding: 0px;
 }
 
 /* TinyMCE */
@@ -45,4 +44,8 @@
 
 .mceLast .mceStatusbar {
 	padding-left: 5px;
+}
+
+.mce-tinymce {
+	clear:right;
 }
