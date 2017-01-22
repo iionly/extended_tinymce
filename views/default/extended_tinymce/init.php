@@ -40,6 +40,25 @@ if (elgg_in_context('activity') || elgg_in_context('ajax')) {
 				e.on('change', function(e) { tinymce.triggerSave(); });
 			}
 		});
+
+		require(['elgg/embed'], function () {
+			elgg.register_hook_handler('embed', 'editor', function(hook, type, params, value) {
+				if (window.tinymce) {
+					var editor = window.tinymce.get(params.textAreaId);
+					if (editor) {
+						var content = params.content;
+						try {
+							editor.execCommand("mceInsertContent", false, content);
+							return false;
+						} catch (e) {
+							// do nothing.
+						}
+					}
+				}
+			});
+		}, function (err) {
+			// do nothing.
+		});
 	});
 </script>
 ___JS;

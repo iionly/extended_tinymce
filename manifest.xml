@@ -3,7 +3,7 @@
 	<name>Extended TinyMCE</name>
 	<id>extended_tinymce</id>
 	<author>iionly / Core developers / Moxiecode Systems AB</author>
-	<version>4.5.2-1</version>
+	<version>4.5.2-2</version>
 	<category>non-bundled</category>
 	<category>enhancement</category>
 	<description>HTML WYSIWYG editor for Elgg based on the jquery Tinymce editor.</description>
@@ -12,7 +12,7 @@
 	<license>GNU General Public License version 2</license>
 	<requires>
 		<type>elgg_release</type>
-		<version>1.9</version>
+		<version>2.3.0</version>
 	</requires>
 	<conflicts>
 		<type>plugin</type>
@@ -22,4 +22,8 @@
 		<type>plugin</type>
 		<name>ckeditor</name>
 	</conflicts>
+	<suggests>
+		<type>plugin</type>
+		<name>embed</name>
+	</suggests>
 </plugin_manifest>

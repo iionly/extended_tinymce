@@ -1,7 +1,7 @@
-Elgg Extended Tinymce plugin for Elgg 1.9 - 1.12 and Elgg 2.X
-=============================================================
+Elgg Extended Tinymce plugin for Elgg 2.3 and newer Elgg 2.X
+============================================================
 
-Latest Version: 4.5.2-1  
+Latest Version: 4.5.2-2  
 Released: 2017-01-21  
 Contact: iionly@gmx.de  
 License: GNU General Public License version 2  
