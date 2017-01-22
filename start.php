@@ -30,7 +30,7 @@ function extended_tinymce_allowed_styles($hook, $type, $items, $vars) {
 		'font-weight', 'font-style', 'border', 'border-top', 'border-color', 'background-color',
 		'border-bottom', 'border-left', 'border-right',
 		'margin', 'margin-top', 'margin-bottom', 'margin-left',
-		'margin-right', 'padding', 'float', 'text-decoration'
+		'margin-right', 'padding', 'float', 'text-decoration', 'list-style-type'
 	);
 
 	return $allowed_styles;
