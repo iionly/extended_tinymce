@@ -1,4 +1,4 @@
-tinymce.addI18n('ro',{
+tinymce.addI18n('ro_ro',{
 "Cut": "Taie",
 "Heading 5": "Titlu 5",
 "Header 2": "Antet 2",

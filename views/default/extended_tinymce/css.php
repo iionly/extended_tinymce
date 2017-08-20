@@ -11,13 +11,12 @@
 ?>
 
 .elgg-input-longtext {
-	width: 100%;
+	width: 0;
+	height: 0;
 	background: transparent;
 	box-shadow: none;
 	display: block !important;
-	height: 0;
 	resize: none;
-	width: 0;
 	visibility: hidden;
 	position: relative;
 	padding: 0px;
