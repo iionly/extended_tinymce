@@ -32,6 +32,7 @@ if (elgg_in_context('activity') || elgg_in_context('ajax')) {
 			browser_spellcheck : true,
 			image_advtab: true,
 			paste_data_images: false,
+			branding: false,
 			autoresize_min_height: 200,
 			autoresize_max_height: 450,
 			insertdate_formats: ["%I:%M:%S %p", "%H:%M:%S", "%Y-%m-%d", "%d.%m.%Y"],
