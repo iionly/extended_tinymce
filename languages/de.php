@@ -1,6 +1,6 @@
 <?php
 /**
- * Extenden TinyMCE German language pack.
+ * Extended TinyMCE German language pack.
  *
  */
 
