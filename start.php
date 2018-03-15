@@ -11,10 +11,10 @@ function extended_tinymce_init() {
 	elgg_extend_view('css/elgg', 'extended_tinymce/css');
 	elgg_extend_view('css/admin', 'extended_tinymce/css');
 
-	elgg_define_js('extended_tinymce', array(
+	elgg_define_js('extended_tinymce', [
 		'src' => 'mod/extended_tinymce/vendor/tinymce/js/tinymce/jquery.tinymce.min.js',
-		'deps' => array('jquery', 'elgg'),
-	));
+		'deps' => ['jquery', 'elgg'],
+	]);
 
 	elgg_extend_view('input/longtext', 'extended_tinymce/init');
 
@@ -23,13 +23,13 @@ function extended_tinymce_init() {
 }
 
 function extended_tinymce_allowed_styles($hook, $type, $items, $vars) {
-	$allowed_styles = array(
+	$allowed_styles = [
 		'color', 'cursor', 'text-align', 'vertical-align', 'font-size', 'font-family',
 		'font-weight', 'font-style', 'border', 'border-top', 'border-color', 'background-color',
 		'border-bottom', 'border-left', 'border-right',
 		'margin', 'margin-top', 'margin-bottom', 'margin-left',
 		'margin-right', 'padding', 'float', 'text-decoration', 'list-style-type'
-	);
+	];
 
 	return $allowed_styles;
 }
