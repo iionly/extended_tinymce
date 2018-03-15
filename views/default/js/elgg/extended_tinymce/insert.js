@@ -11,9 +11,9 @@ elgg.register_hook_handler('embed', 'editor', function(hook, type, params, value
 			var content = params.content;
 			try {
 				editor.execCommand("mceInsertContent", false, content);
+				tinymce.triggerSave();
 				return false;
-			} catch (e) {
-				// do nothing.
+			} finally {
 			}
 		}
 	}
