@@ -9,7 +9,8 @@ echo elgg_view_field([
 	'value' => extended_tinymce_get_user_language(),
 ]);
 
-$inline_code = <<<___JS
+?>
+
 <script>
 	require(['jquery', 'elgg', 'extended_tinymce'], function($, elgg, EXTENDED_TINYMCE) {
 
@@ -39,7 +40,10 @@ $inline_code = <<<___JS
 			autoresize_min_height: 200,
 			autoresize_max_height: 450,
 			insertdate_formats: ["%I:%M:%S %p", "%H:%M:%S", "%Y-%m-%d", "%d.%m.%Y"],
-			content_css: elgg.config.wwwroot + 'mod/extended_tinymce/css/elgg_extended_tinymce.css'
+			content_css: elgg.config.wwwroot + 'mod/extended_tinymce/css/elgg_extended_tinymce.css',
+			setup : function(e) {
+				e.on('Blur', function(e) { tinymce.triggerSave(); });
+			}
 		});
 
 		require(['elgg/embed'], function () {
@@ -50,7 +54,6 @@ $inline_code = <<<___JS
 						var content = params.content;
 						try {
 							editor.execCommand("mceInsertContent", false, content);
-							tinymce.triggerSave();
 							return false;
 						} finally {
 						}
@@ -61,6 +64,3 @@ $inline_code = <<<___JS
 		});
 	});
 </script>
-___JS;
-
-echo $inline_code;
