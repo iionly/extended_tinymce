@@ -12,12 +12,16 @@ echo elgg_view_field([
 ?>
 
 <script>
-	require(['jquery', 'elgg', 'extended_tinymce'], function($, elgg, EXTENDED_TINYMCE) {
+	require(['jquery', 'elgg', 'extended_tinymce', 'elgg/embed'], function($, elgg, EXTENDED_TINYMCE, EMBED) {
 
 		var tinymceLanguage = $('input:hidden[name=extendedtinymcelang]').val();
 
+		function isiPadoriPhone() {
+			return ((navigator.userAgent.match(/iPad/i) != null) || (navigator.platform.indexOf("iPhone") != -1) || (navigator.platform.indexOf("iPod") != -1));
+		}
+
 		$(".elgg-input-longtext").tinymce({
-			script_url : elgg.config.wwwroot + '/mod/extended_tinymce/vendor/tinymce/js/tinymce/tinymce.min.js',
+			script_url : elgg.config.wwwroot + 'mod/extended_tinymce/vendor/tinymce/js/tinymce/tinymce.min.js',
 			selector: ".elgg-input-longtext",
 			theme: "modern",
 			skin : "lightgray",
@@ -29,9 +33,7 @@ echo elgg_view_field([
 			menubar: false,
 			toolbar_items_size: "small",
 			toolbar: [
-				"newdocument preview fullscreen print | searchreplace | styleselect | fontselect | fontsizeselect",
-				"undo redo | bullist numlist | outdent indent | bold italic underline | alignleft aligncenter alignright alignjustify | removeformat",
-				"pastetext | insertdatetime | charmap | hr | table | forecolor backcolor | link unlink | image | emoticons | blockquote" + (elgg.is_admin_logged_in() ? " | code" : "")
+				"newdocument preview fullscreen print | undo redo | searchreplace | pastetext | styleselect | fontselect | fontsizeselect | bold italic underline | removeformat | bullist numlist | outdent indent | align | insertdatetime | charmap | hr | table | forecolor backcolor | link unlink | image | emoticons | blockquote" + (elgg.is_admin_logged_in() ? " | code" : "")
 			],
 			browser_spellcheck : true,
 			image_advtab: true,
@@ -41,26 +43,34 @@ echo elgg_view_field([
 			autoresize_max_height: 450,
 			insertdate_formats: ["%I:%M:%S %p", "%H:%M:%S", "%Y-%m-%d", "%d.%m.%Y"],
 			content_css: elgg.config.wwwroot + 'mod/extended_tinymce/css/elgg_extended_tinymce.css',
-			setup : function(e) {
-				e.on('Blur', function(e) { tinymce.triggerSave(); });
-			}
-		});
-
-		require(['elgg/embed'], function () {
-			elgg.register_hook_handler('embed', 'editor', function(hook, type, params, value) {
-				if (window.tinymce) {
-					var editor = window.tinymce.get(params.textAreaId);
-					if (editor) {
+			init_instance_callback: function(e) {
+				elgg.register_hook_handler('embed', 'editor', function(hook, type, params, value) {
+					if (e.id == params.textAreaId) {
 						var content = params.content;
 						try {
-							editor.execCommand("mceInsertContent", false, content);
+							e.insertContent(content);
 							return false;
 						} finally {
 						}
 					}
-				}
-			});
-		}, function (err) {
+				});
+			},
+			setup: function(e) {
+				e.on('SetContent', function(e) {
+					tinymce.triggerSave();
+					return true;
+				});
+				e.on('Blur', function(e) {
+					tinymce.triggerSave();
+					return true;
+				});
+				e.on('MouseOut', function(e) {
+					if (isiPadoriPhone()) {
+						tinymce.triggerSave();
+					}
+					return true;
+				});
+			}
 		});
 	});
 </script>

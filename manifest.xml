@@ -3,7 +3,7 @@
 	<name>Extended TinyMCE</name>
 	<id>extended_tinymce</id>
 	<author>iionly / Core developers / Moxiecode Systems AB</author>
-	<version>4.7.9-elgg2.3</version>
+	<version>4.7.13</version>
 	<category>non-bundled</category>
 	<category>enhancement</category>
 	<description>HTML WYSIWYG editor for Elgg based on the jquery Tinymce editor.</description>
