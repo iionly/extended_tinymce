@@ -7,9 +7,8 @@
 elgg_register_event_handler('init', 'system', 'extended_tinymce_init');
 
 function extended_tinymce_init() {
-
-	elgg_extend_view('css/elgg', 'extended_tinymce/css');
-	elgg_extend_view('css/admin', 'extended_tinymce/css');
+	elgg_extend_view('elgg.css','extended_tinymce/extended_tinymce.css');
+	elgg_extend_view('admin.css','extended_tinymce/extended_tinymce.css');
 
 	elgg_define_js('extended_tinymce', [
 		'src' => 'mod/extended_tinymce/vendor/tinymce/js/tinymce/jquery.tinymce.min.js',
@@ -20,6 +19,8 @@ function extended_tinymce_init() {
 
 	// extend allowed styles for tinymce editor as filtered by htmlawed
 	elgg_register_plugin_hook_handler('allowed_styles', 'htmlawed', 'extended_tinymce_allowed_styles');
+	// textarea id
+	elgg_register_plugin_hook_handler('view_vars', 'input/longtext', 'extended_tinymce_longtext_id');
 }
 
 function extended_tinymce_allowed_styles($hook, $type, $items, $vars) {
@@ -55,4 +56,27 @@ function extended_tinymce_get_user_language() {
 	}
 
 	return $user_language;
+}
+
+/**
+ * Set an id on input/longtext
+ *
+ * @param string $hook   'view_vars'
+ * @param string $type   'input/longtext'
+ * @param array  $vars   current return value
+ * @param array  $params supplied params
+ *
+ * @return void|array
+ */
+function extended_tinymce_longtext_id($hook, $type, $vars, $params) {
+	$id = elgg_extract('id', $vars);
+	if ($id !== null) {
+		return;
+	}
+
+	// input/longtext view vars need to contain an id for editors to be initialized
+	// random id generator is the same as in input/longtext
+	$vars['id'] = 'elgg-input-' . base_convert(mt_rand(), 10, 36);
+
+	return $vars;
 }

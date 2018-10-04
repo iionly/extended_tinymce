@@ -2,7 +2,8 @@
 body {
 	color: #333;
 	font: 80%/1.4 "Lucida Grande",Verdana,sans-serif;
-	font-size: 12px;
+	font-size: 14px;
+	font-size: 0.9rem;
 	scrollbar-3dlight-color:#f0f0ee;
 	scrollbar-arrow-color:#676662;
 	scrollbar-base-color:#f0f0ee;
@@ -15,5 +16,6 @@ body {
 td,th {
 	color: #333;
 	font: 80%/1.4 "Lucida Grande",Verdana,sans-serif;
-	font-size: 12px;
+	font-size: 14px;
+	font-size: 0.9rem;
 }
